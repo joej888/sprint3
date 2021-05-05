@@ -1,0 +1,12 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: vod-ms-app-checkout-authentication
+spec:
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: vod-ms-app-checkout-authentication
+  minReplicas: 2
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 70
