@@ -4,7 +4,7 @@ zipkin:
 
 sentry:
   httpProxy: null
-  dsn: https://4efdee52031c47f281bd6071108f4d74@o185340.ingest.sentry.io/5420080
+  dsn: https://8558bd3914c944a7bc02e9dc6da4f06b@o185340.ingest.sentry.io/5746930
   maxBreadcrumbs: 30
   environment: LOCAL
   enabled: false

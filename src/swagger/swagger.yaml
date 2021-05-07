@@ -15,42 +15,6 @@ consumes:
 produces:
   - application/json
 paths:
-  /rest/services/v1/apps/checkout-auth/otp:
-    post:
-      tags:
-        - Checkout Authentication
-      description: authenticates customer and retreives token for use when checking out
-      operationId: customerAuthentication
-      parameters:
-        - name: idNumber
-          in: query
-          type: string
-          required: true
-          description: The customers ID/Passport Number
-        - name: docType
-          in: query
-          type: string
-          required: true
-          description: The type of identity document (ID/Passport)
-        - name: maskedMsisdn
-          in: query
-          type: string
-          required: true
-          description: A masked version of the customer's msisdn
-        - name: otp
-          in: query
-          type: string
-          required: true
-          description: An OTP for authentication
-      responses:
-        "200":
-          description: Success
-          schema:
-            $ref: "#/definitions/customerAuth"
-        "400":
-          description: Bad request
-        "424":
-          description: Upstream call failed with a 500. Response will be identical to upstream failure
   /rest/services/v1/apps/checkout-auth/otpmessage:
     post:
       tags:
@@ -84,58 +48,11 @@ paths:
           description: Upstream call failed with a 500. Response will be identical to upstream failure
         500:
           description: Technical error occured, service failure.
-  /rest/services/v1/apps/checkout-auth/customers/{idNumber}/msisdn:
-    get:
-      tags:
-        - "Checkout Authentication"
-      operationId: getMsisdnList
-      consumes:
-        - application/json
-      parameters:
-        - in: path
-          name: idNumber
-          type: string
-          required: true
-        - in: query
-          name: docType
-          type: string
-          required: true
-      responses:
-        200:
-          description: Success
-          schema:
-            $ref: "#/definitions/MsisdnList"
-        400:
-          description: Missing required input parameter
-        401:
-          description: Not authorized
-        424:
-          description: Upstream call failed with a 500. Response will be identical to upstream failure
-        500:
-          description: Technical error occured, service failure.
   /swagger:
     x-swagger-pipe: swagger_raw
 
 # complex objects have schema definitions
 definitions:
-  customerAuth:
-    type: object
-    properties:
-      result:
-        type: object
-        properties:
-          messages:
-            type: array
-            items:
-              type: string
-          result:
-            type: object
-          successful:
-            type: string
-          code:
-            type: number
-          webAuth:
-            type: string
   OtpStatus:
     type: object
     properties:
@@ -170,15 +87,4 @@ definitions:
       templated:
         type: boolean
     title: Link
-  MsisdnList:
-    type: object
-    properties:
-      messages:
-        type: array
-        items:
-          type: string
-      result:
-        type: array
-        items:
-          type: string
 

@@ -16,7 +16,7 @@ const { Sentry } = require('vod-npm-sentry');
 const { restifyErrorMiddleware } = require('vod-npm-utils/error');
 
 const LOGGER = createLogger({
-  name: 'vod-ms-app-checkout-authentication',
+  name: 'vod-ms-upgrade-journey-authentication',
   level: config.get('log.level')
 });
 

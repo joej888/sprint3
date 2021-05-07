@@ -1,2 +1,2 @@
 :toc: left
-= vod-ms-app-checkout-authentication
+= vod-ms-upgrade-journey-authentication

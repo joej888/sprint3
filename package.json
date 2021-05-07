@@ -1,8 +1,8 @@
 {
-  "name": "vod-ms-app-checkout-authentication",
+  "name": "vod-ms-upgrade-journey-authentication",
   "version": "1.0.0-SNAPSHOT",
   "private": true,
-  "description": "authenticates a customer before checkout",
+  "description": "generate otp",
   "keywords": [],
   "vod-settings": {
     "teams": [
@@ -27,7 +27,7 @@
     "vod-npm-restify-mockme": "^1.0.6",
     "vod-npm-restify-sanitize": "0.0.1",
     "vod-npm-sentry": "^2.1.4",
-    "vod-npm-services": "^2.2.48",
+    "vod-npm-services": "2.2.195",
     "vod-npm-utils": "^3.2.4",
     "zipkin-instrumentation-restify": "^0.18.6"
   },
