@@ -5,7 +5,7 @@ const { vettingService } = require('vod-npm-services');
 const prometheusClient = require('restify-prom-bundle').client;
 
 const generateOtpErr = new prometheusClient.Counter({
-  name: 'app_sales_generate_otp_error_count',
+  name: 'upgrade_journey_generate_otp_error_count',
   help: 'vod-ms-vetting authentication error'
 });
 
